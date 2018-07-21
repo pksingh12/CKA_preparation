@@ -4,7 +4,7 @@ This repo is for basic info related to CKA.
 
 ## Basic Commands
 
-1.kubectl get componentstatuses
+1.kubectl get componentstatuses     
 NAME                 STATUS    MESSAGE              ERROR
 scheduler            Healthy   ok                   
 etcd-0               Healthy   {"health": "true"}   
