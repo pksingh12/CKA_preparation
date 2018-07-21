@@ -1,10 +1,15 @@
-# Project Title
+# CKA Preparation
 
-One Paragraph of project description goes here
+This repo is for basic info related to CKA.
 
-## Getting Started
+## Basic Commands
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+1.kubectl get componentstatuses
+NAME                 STATUS    MESSAGE              ERROR
+scheduler            Healthy   ok                   
+etcd-0               Healthy   {"health": "true"}   
+controller-manager   Healthy   ok  
+
 
 ### Prerequisites
 
