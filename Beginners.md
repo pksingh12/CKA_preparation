@@ -11,6 +11,14 @@ etcd-0               Healthy   {"health": "true"}
 controller-manager   Healthy   ok  
 
 
+
+* [controller-manager] - responsible for running various controllers that regulate
+  behavior in the cluster: for example, ensuring that all of the replicas of a service
+  are available and healthy.
+* [scheduler] - responsible for placing different
+  pods onto different nodes in the cluster.
+* [etcd] - server is the storage for the cluster where all of the API objects are stored.
+
 ### Prerequisites
 
 What things you need to install the software and how to install them
