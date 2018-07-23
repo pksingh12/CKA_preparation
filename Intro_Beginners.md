@@ -25,7 +25,7 @@ controller-manager   Healthy   ok
 3.kubectl describe nodes node-1    
 ```
 
-[Kubernetes Proxy] - responsible for routing network traffic to load-balanced services in the Kubernetes cluster.     
+* [Kubernetes Proxy] - responsible for routing network traffic to load-balanced services in the Kubernetes cluster.     
 
 
 ### Prerequisites
