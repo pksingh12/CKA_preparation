@@ -19,10 +19,11 @@ controller-manager   Healthy   ok
   pods onto different nodes in the cluster.
 * [etcd] - server is the storage for the cluster where all of the API objects are stored.
 
-2.kubectl get nodes
-3.kubectl describe nodes node-1
+2.kubectl get nodes 
+3.kubectl describe nodes node-1  
 
-[Kubernetes Proxy] - responsible for routing network traffic to load-balanced services in the Kubernetes cluster.
+[Kubernetes Proxy] - responsible for routing network traffic to load-balanced services in the Kubernetes cluster.     
+
 
 ### Prerequisites
 
