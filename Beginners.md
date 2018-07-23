@@ -3,8 +3,9 @@
 This repo is for basic info related to CKA.
 
 ## Basic Commands
-
-1.kubectl get componentstatuses     
+```
+1.kubectl get componentstatuses 
+```
 NAME                 STATUS    MESSAGE              ERROR
 scheduler            Healthy   ok                   
 etcd-0               Healthy   {"health": "true"}   
@@ -19,8 +20,10 @@ controller-manager   Healthy   ok
   pods onto different nodes in the cluster.
 * [etcd] - server is the storage for the cluster where all of the API objects are stored.
 
+```
 2.kubectl get nodes       
-3.kubectl describe nodes node-1         
+3.kubectl describe nodes node-1    
+```
 
 [Kubernetes Proxy] - responsible for routing network traffic to load-balanced services in the Kubernetes cluster.     
 
