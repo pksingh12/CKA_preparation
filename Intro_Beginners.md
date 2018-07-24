@@ -25,10 +25,22 @@ controller-manager   Healthy   ok
 3.kubectl describe nodes node-1    
 ```
 
-* [Kubernetes Proxy] - responsible for routing network traffic to load-balanced services in the Kubernetes cluster.     
+* [Kubernetes Proxy] - responsible for routing network traffic to load-balanced services in the Kubernetes cluster.   
 
 
-### Prerequisites
+
+
+### Common kubectl commands
+
+1. Contexts
+
+```
+* kubectl config --kubeconfig=config-demo2 set-cluster kubernetes --server=https://172.17.0.54:6443 --insecure-skip-tls-verify   
+* kubectl config --kubeconfig=config-demo2 set-credentials developer --username=dev --password=Test@123 
+* kubectl config --kubeconfig=config-demo2 set-context dev-frontend --cluster=minikube --namespace=kube-system --user=developer    
+* kubectl config view     
+* kubectl config --kubeconfig=config-demo2 view --minify     
+```
 
 What things you need to install the software and how to install them
 
