@@ -67,7 +67,8 @@ To remove labels
 ```kubectl cp <pod-name>:/remote/file/path /local/file/path```
 
 **KeyPoint 4 -** imperative way of creating pods
-```kubectl run kuard --image=gcr.io/kuar-demo/kuard-amd64:1```
+```kubectl run kuard --image=gcr.io/kuar-demo/kuard-amd64:1```   
+```kubectl delete deployments/kuard```
 
 
 
