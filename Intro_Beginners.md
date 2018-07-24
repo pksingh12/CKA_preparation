@@ -49,6 +49,12 @@ Ex. ```kubectl get pods my-pod -o jsonpath --template={.status.podIP}```
 For more  detailed information use below command   
 ```kubectl describe <resource-name> <object-name>```
 
+2. Creating, Updating, and Destroying Kubernetes Objects    
+```kubectl apply -f obj.yaml   
+   kubectl delete -f obj.yaml
+```
+
+
 ```
 Give examples
 ```
