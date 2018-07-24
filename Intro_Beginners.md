@@ -43,7 +43,11 @@ controller-manager   Healthy   ok
 ```
 
 **KeyPoint 1 -** you can also view the kubernetes objects as raw JSON or YAML using the -o json or -o yaml flags, respectively.   
-**Keypoint 2 -** A common option for manipulating the output of kubectl is to remove the headers, which is often useful when combining kubectl with Unix pipes (e.g., kubectl ... | awk ...). If you specify the --no-headers flag, kubectl will skip the headers at the top of the human-readable table.  
+**Keypoint 2 -** A common option for manipulating the output of kubectl is to remove the headers, which is often useful when combining kubectl with Unix pipes (e.g., kubectl ... | awk ...). If you specify the --no-headers flag, kubectl will skip the headers at the top of the human-readable table.     
+**KeyPoint 3 -** Another common task is extracting specific fields from the object. kubectl uses the JSONPath query language to select fields in the returned object.    
+Ex. ```kubectl get pods my-pod -o jsonpath --template={.status.podIP}```    
+For more  detailed information use below command   
+```kubectl describe <resource-name> <object-name>
 
 ```
 Give examples
