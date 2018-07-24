@@ -47,7 +47,7 @@ controller-manager   Healthy   ok
 **KeyPoint 3 -** Another common task is extracting specific fields from the object. kubectl uses the JSONPath query language to select fields in the returned object.    
 Ex. ```kubectl get pods my-pod -o jsonpath --template={.status.podIP}```    
 For more  detailed information use below command   
-```kubectl describe <resource-name> <object-name>
+```kubectl describe <resource-name> <object-name>```
 
 ```
 Give examples
