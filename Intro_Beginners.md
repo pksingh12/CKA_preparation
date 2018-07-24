@@ -42,8 +42,8 @@ controller-manager   Healthy   ok
 * kubectl config --kubeconfig=config-demo2 view --minify     
 ```
 
-KeyPoint 1 - you can also view the kubernetes objects as raw JSON or YAML using the -o json or -o yaml flags, respectively.   
-Keypoint 2 - A common option for manipulating the output of kubectl is to remove the headers, which is often useful when combining kubectl with Unix pipes (e.g., kubectl ... | awk ...). If you specify the --no-headers flag, kubectl will skip the headers at the top of the human-readable table.  
+**KeyPoint 1 -** you can also view the kubernetes objects as raw JSON or YAML using the -o json or -o yaml flags, respectively.   
+**Keypoint 2 -** A common option for manipulating the output of kubectl is to remove the headers, which is often useful when combining kubectl with Unix pipes (e.g., kubectl ... | awk ...). If you specify the --no-headers flag, kubectl will skip the headers at the top of the human-readable table.  
 
 ```
 Give examples
