@@ -91,7 +91,7 @@ spec:
       name: http
       protocol: TCP
 ```
-
+Note: you can get demo files from this url https://github.com/kubernetes-up-and-running/examples
 
 
 
