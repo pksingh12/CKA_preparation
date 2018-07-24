@@ -66,12 +66,29 @@ By default, label and annotate will not let you overwrite an existing label. To
 do this, you need to add the --overwrite flag.
 
 4. Debugging commands
-```kubectl exec -it <pod-name> -- bash```
+```kubectl exec -it <pod-name> -- bash```     
 ```kubectl cp <pod-name>:/remote/file/path /local/file/path```
 
 **KeyPoint 4 -** imperative way of creating pods
 ```kubectl run kuard --image=gcr.io/kuar-demo/kuard-amd64:1```   
 ```kubectl delete deployments/kuard```
+
+
+### Pods Manifests
+kuard-pod.yaml
+
+```apiVersion: v1
+kind: Pod
+metadata:
+name: kuard
+spec:
+containers:
+- image: gcr.io/kuar-demo/kuard-amd64:1
+name: kuard
+ports:
+- containerPort: 8080
+name: http
+protocol: TCP```
 
 
 
