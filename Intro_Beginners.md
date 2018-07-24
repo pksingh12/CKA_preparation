@@ -62,6 +62,12 @@ Labels and annotations are tags for your objects.the labels and annotations on a
 To remove labels 
 ```kubectl label pods bar -color```
 
+4. Debugging commands
+```kubectl exec -it <pod-name> -- bash```
+```kubectl cp <pod-name>:/remote/file/path /local/file/path```
+
+
+
 
 ```
 Give examples
