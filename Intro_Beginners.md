@@ -55,6 +55,13 @@ For more  detailed information use below command
     kubectl describe <resource-name> <object-name>
 ```
 
+3. Labeling and Annotating Objects  
+Labels and annotations are tags for your objects.the labels and annotations on any Kubernetes object using the annotate and  label commands.   
+```kubectl label pods bar color=red```
+
+To remove labels 
+```kubectl label pods bar -color```
+
 
 ```
 Give examples
