@@ -101,6 +101,14 @@ master, to the instance of the Pod running on one of the worker nodes.
 As long as the port-forward command is still running, you can access the Pod (in
 this case the kuard web interface) on http://localhost:8080.
 
+###Getting More Info with Logs
+```kubectl logs kuard```
+```kubectl logs -f kuard```
+```kubectl logs kuard --previous```
+Adding the --previous flag will get logs from a previous instance of
+the container. This is useful, for example, if your containers are continuously
+restarting due to a problem at container startup.
+
 
 ```
 Give examples
