@@ -95,6 +95,13 @@ Note: you can get demo files from this url https://github.com/kubernetes-up-and-
 
 
 
+```kubectl port-forward kuard 8080:8080```
+a secure tunnel is created from your local machine, through the Kubernetes
+master, to the instance of the Pod running on one of the worker nodes.
+As long as the port-forward command is still running, you can access the Pod (in
+this case the kuard web interface) on http://localhost:8080.
+
+
 ```
 Give examples
 ```
