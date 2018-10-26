@@ -109,7 +109,7 @@ Adding the --previous flag will get logs from a previous instance of
 the container. This is useful, for example, if your containers are continuously
 restarting due to a problem at container startup.    
 
-
+kubectl get hpa --all-namespaces --context=gke_kohls-mobile-prd_us-central1-b_mobileservices-prd-usc1
 
 ```
 Give examples
