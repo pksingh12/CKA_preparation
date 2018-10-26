@@ -25,6 +25,15 @@ controller-manager   Healthy   ok
 3.kubectl describe nodes node-1    
 ```
 
+for deploy in $(echo 'kreturns-carrier-delivery-status-tp-24
+kreturns-dynamic-offers-16
+kreturns-manifest-load-16
+kreturns-offers-supc-load-21
+kreturns-ship-status-batch-31')
+do
+echo $deploy
+kubectl scale --replicas=1 deployment/$deploy -n $(echo $ns| sed 's/-[0-9]*$//')-perf
+done
 [Kubernetes Proxy] - responsible for routing network traffic to load-balanced services in the Kubernetes cluster.     
 
 
