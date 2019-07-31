@@ -1,0 +1,112 @@
+Dockerfile
+===========
+FROM python
+#FROM debian:jessie-slim
+#FROM nginx
+ENV GCSFUSE_REPO gcsfuse-jessie
+#RUN apt-get update && apt-get install python2.7 && python
+RUN apt-get update  && apt-get install --yes --no-install-recommends \
+    ca-certificates \
+    curl \
+    gnupg \
+  && echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" \
+    | tee /etc/apt/sources.list.d/gcsfuse.list \
+  && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - \
+  && apt-get update \
+  && apt-get install --yes gcsfuse curl whichman bash\
+  && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
+
+#RUN apt-get install -y \
+# python \
+# curl \
+# which \
+# bash
+
+ RUN curl -sSL https://sdk.cloud.google.com | bash
+
+ ENV PATH $PATH:/root/google-cloud-sdk/bin
+RUN mkdir -p /etc/bucketkey
+COPY sad.json /etc/bucketkey/sad.json 
+#RUN gcloud auth activate-service-account --key-file /etc/bucketkey/sad.json
+CMD ["sleep", "3600000000000"]
+
+
+===
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginxd
+  name: nginxd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: nginxd
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: nginxd
+    spec:
+      containers:
+      - image: testnginx1
+        name: nginxd
+        resources: {}
+        securityContext:
+               privileged: true
+               capabilities:
+                       add:
+                               - SYS_ADMIN
+        lifecycle:
+          postStart:
+                  exec:
+                    command: ["gcsfuse", "-o", "nonempty", "k8s-test01", "/tmp"]
+          preStop:
+                  exec:
+                    command: ["fusermount", "-u", "/tmp"]
+        imagePullPolicy: IfNotPresent
+status: {}
+====
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginxd
+  name: nginxw
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: nginxd
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: nginxd
+    spec:
+      containers:
+      - image: testnginx2
+        name: nginxd
+        env:
+        - name: GOOGLE_APPLICATION_CREDENTIALS
+          value: /etc/bucketkey/sad.json
+        resources: {}
+        securityContext:
+               privileged: true
+               capabilities:
+                       add:
+                               - SYS_ADMIN
+        lifecycle:
+          postStart:
+                  exec:
+                    command: ["gcsfuse", "-o", "nonempty", "k8s-test01", "/tmp"]
+          preStop:
+                  exec:
+                    command: ["fusermount", "-u", "/tmp"]
+        imagePullPolicy: IfNotPresent
+status: {}
